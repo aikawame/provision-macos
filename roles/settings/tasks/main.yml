@@ -1,0 +1,3 @@
+- include: common.yml
+- include: finder.yml
+- include: dock.yml

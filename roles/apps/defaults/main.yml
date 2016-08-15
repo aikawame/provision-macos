@@ -1,0 +1,127 @@
+mas_packages:
+  - name: line
+    id: 539883307
+    domain:
+    support:
+  - name: omnifocus
+    id: 867299399
+    domain:
+    support:
+  - name: simplenote
+    id: 692867256
+    domain:
+    support:
+  - name: soraannai
+    id: 599799247
+    domain:
+    support:
+  - name: stay
+    id: 435410196
+    domain: com.cordlessdog.Stay
+    support: Stay
+  - name: vox
+    id: 461369673
+    domain:
+    support:
+  - name: xcode
+    id: 497799835
+    domain:
+    support:
+
+brew_cask_packages:
+  - name: "0xed"
+    domain:
+    support:
+  - name: 1password
+    domain: com.agilebits.onepassword4
+    support:
+  - name: alfred
+    domain: com.runningwithcrayons.Alfred-3.plist
+    support: Alfred 3
+  - name: appcleaner
+    domain:
+    support:
+  - name: bettertouchtool
+    domain: com.hegenberg.BetterTouchTool
+    support: BetterTouchTool
+  - name: diffmerge
+    domain: com.sourcegear.DiffMerge
+    support:
+  - name: disk-inventory-x
+    domain:
+    support:
+  - name: font-ricty-diminished
+    domain:
+    support:
+#  - name: genymotion
+#    domain:
+#    support:
+  - name: google-chrome
+    domain:
+    support:
+  - name: google-drive
+    domain:
+    support:
+  - name: hyperswitch
+    domain: com.bahoom.HyperSwitch
+    support:
+  - name: intellij-idea
+    domain:
+    support:
+  - name: iterm2
+    domain: com.googlecode.iterm2
+    support:
+  - name: java
+    domain:
+    support:
+  - name: karabiner
+    domain: org.pqrs.Karabiner
+    support: Karabiner
+  - name: kindle
+    domain: com.amazon.Kindle
+    support:
+  - name: parallels-desktop
+    domain:
+    support:
+  - name: sequel-pro
+    domain: com.sequelpro.SequelPro
+    support: Sequel Pro
+  - name: sublime-text
+    domain: com.sublimetext.3
+    support: Sublime Text 3
+  - name: slack
+    domain:
+    support:
+  - name: tower
+    domain: com.fournova.Tower2
+    support:
+  - name: vagrant
+    domain:
+    support:
+  - name: virtualbox
+    domain:
+    support:
+  - name: xtrafinder
+    domain: com.trankynam.XtraFinder
+    support:
+  - name: yujitach-menumeters
+    domain: com.ragingmenace.MenuMeters
+    support:
+
+brew_packages:
+  - android-sdk
+#  - ant
+#  - cdrtools
+  - git
+  - gnu-sed
+  - mas
+  - nkf
+#  - node
+  - p7zip
+  - packer
+  - peco
+  - php-code-sniffer
+  - phpmd
+  - wget
+  - zsh
+

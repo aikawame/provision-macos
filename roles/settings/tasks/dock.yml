@@ -1,0 +1,22 @@
+- name: サイズを変更する
+  osx_defaults:
+    domain: com.apple.dock
+    key: tilesize
+    type: int
+    value: 48
+
+- name: 自動的に隠す
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+
+- name: ウィンドウをアプリケーションアイコンに最小化する
+  osx_defaults:
+    domain: com.apple.dock
+    key: minimize-to-application
+    type: bool
+    value: true
+
+# TODO: Dockを再起動する

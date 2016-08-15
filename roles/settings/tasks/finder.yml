@@ -1,0 +1,71 @@
+- name: 隠しファイルを表示する
+  osx_defaults:
+    domain: com.apple.finder
+    key: AppleShowAllFiles
+    type: bool
+    value: true
+  notify: killall finder
+
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: clmv
+
+- name: ホームから開くようにする
+  osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTarget
+    type: string
+    value: PfLo
+
+- name: ホームから開くようにする
+  osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTargetPath
+    type: string
+    value: file://${HOME}/
+
+- name: パスバーの階層表示をホームから開始する
+  osx_defaults:
+    domain: com.apple.finder
+    key: PathBarRootAtHome
+    type: bool
+    value: true
+
+- name: クイックルックのテキストをコピー可能にする
+  osx_defaults:
+    domain: com.apple.finder
+    key: QLEnableTextSelection
+    type: bool
+    value: true
+
+- name: 他のアプリケーションに切り替えたらクイックルックを隠す
+  osx_defaults:
+    domain: com.apple.finder
+    key: QLHidePanelOnDeactivate
+    type: bool
+    value: true
+
+- name: ファイル拡張子変更時の警告を無効にする
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXEnableExtensionChangeWarning
+    type: bool
+    value: false
+
+- name: デスクトップを無効にする
+  osx_defaults:
+    domain: com.apple.finder
+    key: CreateDesktop
+    type: bool
+    value: false
+
+- name: アニメーションを無効にする
+  osx_defaults:
+    domain: com.apple.finder
+    key: DisableAllAnimations
+    type: bool
+    value: true
+
+# TODO: Finderを再起動する

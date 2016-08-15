@@ -1,0 +1,105 @@
+# TODO: 毎回インストールされないようにする
+#- name: App Storeのパッケージをインストールする
+#  shell: mas install {{ item.id }}
+#  with_items: "{{ mas_packages }}"
+
+- name: Homebrew Caskのパッケージをインストールする
+  homebrew_cask:
+    name: "{{ item.name }}"
+    state: present
+  with_items:
+    "{{ brew_cask_packages }}"
+
+- name: Homebrewのパッケージをインストールする
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    "{{ brew_packages }}"
+
+- name: アプリケーションの設定を反映する
+  file:
+    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Preferences/{{ item.domain }}.plist
+    dest: ~/Library/Preferences/{{ item.domain }}.plist
+    owner: aikawame
+    group: staff
+    mode: 0600
+    state: link
+    force: yes
+  when:
+    item.domain != None
+  with_items:
+    "{{ mas_packages }}"
+
+- name: アプリケーションの設定を反映する
+  file:
+    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Preferences/{{ item.domain }}.plist
+    dest: ~/Library/Preferences/{{ item.domain }}.plist
+    owner: aikawame
+    group: staff
+    mode: 0600
+    state: link
+    force: yes
+  when:
+    item.domain != None
+  with_items:
+    "{{ brew_cask_packages }}"
+
+- name: アプリケーションの設定を反映する
+  file:
+    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Application Support/{{ item.support }}
+    dest: ~/Library/Application Support/{{ item.support }}
+    owner: aikawame
+    group: staff
+    mode: 0755
+    state: link
+    force: yes
+  when:
+    item.support != None
+  with_items:
+    "{{ mas_packages }}"
+
+- name: アプリケーションの設定を反映する
+  file:
+    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Application Support/{{ item.support }}
+    dest: ~/Library/Application Support/{{ item.support }}
+    owner: aikawame
+    group: staff
+    mode: 0755
+    state: link
+    force: yes
+  when:
+    item.support != None
+  with_items:
+    "{{ brew_cask_packages }}"
+
+- name: SSHの設定を反映する
+  become: yes
+  file:
+    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Config/.ssh
+    dest: ~/.ssh
+    owner: aikawame
+    group: staff
+    mode: 0700
+    state: link
+    force: yes
+
+- name: ホストの設定を反映する
+  become: yes
+  file:
+    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Config/etc/hosts
+    dest: /etc/hosts
+    owner: root
+    group: wheel
+    mode: 0644
+    state: link
+    force: yes
+
+- name: IntelliJの設定をコピーする
+  become: yes
+  copy:
+    src: idea.vmoptions
+    dest: /Applications/IntelliJ IDEA.app/Contents/bin/idea.vmoptions
+    owner: aikawame
+    group: admin
+    mode: 0644
