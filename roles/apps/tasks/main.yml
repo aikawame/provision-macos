@@ -46,6 +46,7 @@
     "{{ brew_cask_packages }}"
 
 - name: アプリケーションの設定を反映する
+  become: yes
   file:
     src: ~/Library/Mobile Documents/com~apple~CloudDocs/Application Support/{{ item.support }}
     dest: ~/Library/Application Support/{{ item.support }}
@@ -60,6 +61,7 @@
     "{{ mas_packages }}"
 
 - name: アプリケーションの設定を反映する
+  become: yes
   file:
     src: ~/Library/Mobile Documents/com~apple~CloudDocs/Application Support/{{ item.support }}
     dest: ~/Library/Application Support/{{ item.support }}
