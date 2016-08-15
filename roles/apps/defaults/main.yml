@@ -36,7 +36,7 @@ brew_cask_packages:
     domain: com.agilebits.onepassword4
     support:
   - name: alfred
-    domain: com.runningwithcrayons.Alfred-3.plist
+    domain: com.runningwithcrayons.Alfred-Preferences-3
     support: Alfred 3
   - name: appcleaner
     domain:
