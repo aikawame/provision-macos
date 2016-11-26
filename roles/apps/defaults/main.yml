@@ -1,110 +1,147 @@
-mas_packages:
+gui_packages:
+  # App Store
   - name: line
+    type: mas
     id: 539883307
     domain:
     support:
   - name: omnifocus
+    type: mas
     id: 867299399
     domain:
     support:
   - name: simplenote
+    type: mas
     id: 692867256
     domain:
     support:
   - name: soraannai
+    type: mas
     id: 599799247
     domain:
     support:
   - name: stay
+    type: mas
     id: 435410196
     domain: com.cordlessdog.Stay
     support: Stay
-  - name: vox
-    id: 461369673
-    domain:
-    support:
   - name: xcode
+    type: mas
     id: 497799835
     domain:
     support:
 
-brew_cask_packages:
+  # Homebrew Cask
   - name: "0xed"
+    type: brew_cask
     domain:
     support:
   - name: 1password
+    type: brew_cask
     domain: com.agilebits.onepassword4
     support:
   - name: alfred
+    type: brew_cask
     domain: com.runningwithcrayons.Alfred-Preferences-3
     support: Alfred 3
   - name: appcleaner
+    type: brew_cask
     domain:
     support:
   - name: bettertouchtool
+    type: brew_cask
     domain: com.hegenberg.BetterTouchTool
     support: BetterTouchTool
   - name: diffmerge
+    type: brew_cask
     domain: com.sourcegear.DiffMerge
     support:
   - name: disk-inventory-x
+    type: brew_cask
     domain:
     support:
   - name: font-ricty-diminished
+    type: brew_cask
     domain:
     support:
 #  - name: genymotion
+#    type: brew_cask
 #    domain:
 #    support:
   - name: google-chrome
+    type: brew_cask
     domain:
     support:
   - name: google-drive
+    type: brew_cask
     domain:
     support:
   - name: hyperswitch
+    type: brew_cask
     domain: com.bahoom.HyperSwitch
     support:
   - name: intellij-idea
+    type: brew_cask
     domain:
     support:
   - name: iterm2
+    type: brew_cask
     domain: com.googlecode.iterm2
     support:
   - name: java
+    type: brew_cask
     domain:
     support:
   - name: karabiner
+    type: brew_cask
     domain: org.pqrs.Karabiner
     support: Karabiner
   - name: kindle
+    type: brew_cask
     domain: com.amazon.Kindle
     support:
   - name: parallels-desktop
+    type: brew_cask
     domain:
     support:
   - name: sequel-pro
+    type: brew_cask
     domain: com.sequelpro.SequelPro
     support: Sequel Pro
+  - name: rdm
+    type: brew_cask
+    domain:
+    support:
+  - name: libreoffice
+    type: brew_cask
+    domain:
+    support:
   - name: sublime-text
+    type: brew_cask
     domain: com.sublimetext.3
     support: Sublime Text 3
   - name: slack
+    type: brew_cask
     domain:
     support:
   - name: tower
+    type: brew_cask
     domain: com.fournova.Tower2
     support:
   - name: vagrant
+    type: brew_cask
     domain:
     support:
   - name: virtualbox
+    type: brew_cask
     domain:
     support:
   - name: xtrafinder
+    type: brew_cask
     domain: com.trankynam.XtraFinder
     support:
   - name: yujitach-menumeters
+    type: brew_cask
     domain: com.ragingmenace.MenuMeters
     support:
 

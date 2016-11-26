@@ -1,14 +1,20 @@
 # TODO: 毎回インストールされないようにする
-#- name: App Storeのパッケージをインストールする
-#  shell: mas install {{ item.id }}
-#  with_items: "{{ mas_packages }}"
+- name: App Storeのパッケージをインストールする
+  shell:
+    mas install {{ item.id }}
+  when:
+    item.type == 'mas'
+  with_items:
+    "{{ gui_packages }}"
 
 - name: Homebrew Caskのパッケージをインストールする
   homebrew_cask:
     name: "{{ item.name }}"
     state: present
+  when:
+    item.type == 'brew_cask'
   with_items:
-    "{{ brew_cask_packages }}"
+    "{{ gui_packages }}"
 
 - name: Homebrewのパッケージをインストールする
   homebrew:
@@ -17,7 +23,7 @@
   with_items:
     "{{ brew_packages }}"
 
-- name: アプリケーションの設定を反映する
+- name: GUIアプリケーションの設定を反映する
   file:
     src: ~/Library/Mobile Documents/com~apple~CloudDocs/Preferences/{{ item.domain }}.plist
     dest: ~/Library/Preferences/{{ item.domain }}.plist
@@ -29,24 +35,28 @@
   when:
     item.domain != None
   with_items:
-    "{{ mas_packages }}"
+    "{{ gui_packages }}"
 
-- name: アプリケーションの設定を反映する
-  file:
-    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Preferences/{{ item.domain }}.plist
-    dest: ~/Library/Preferences/{{ item.domain }}.plist
-    owner: aikawame
-    group: staff
-    mode: 0600
-    state: link
-    force: yes
+- name: アプリケーションの支援ディレクトリーを確認する
+  stat:
+    path: ~/Library/Application Support/{{ item.support }}
   when:
-    item.domain != None
+    item.support != None
   with_items:
-    "{{ brew_cask_packages }}"
+    "{{ gui_packages }}"
+  register:
+    support_dir
 
-- name: アプリケーションの設定を反映する
-  become: yes
+- name: アプリケーションの支援ディレクトリーを削除する
+  file:
+    path: ~/Library/Application Support/{{ item.item.support }}
+    state: absent
+  when:
+    item.item.support != None and item.stat.islnk != true
+  with_items:
+    "{{ support_dir.results }}"
+
+- name: アプリケーションの支援ディレクトリーを反映する
   file:
     src: ~/Library/Mobile Documents/com~apple~CloudDocs/Application Support/{{ item.support }}
     dest: ~/Library/Application Support/{{ item.support }}
@@ -58,36 +68,11 @@
   when:
     item.support != None
   with_items:
-    "{{ mas_packages }}"
-
-- name: アプリケーションの設定を反映する
-  become: yes
-  file:
-    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Application Support/{{ item.support }}
-    dest: ~/Library/Application Support/{{ item.support }}
-    owner: aikawame
-    group: staff
-    mode: 0755
-    state: link
-    force: yes
-  when:
-    item.support != None
-  with_items:
-    "{{ brew_cask_packages }}"
-
-- name: SSHの設定を反映する
-  become: yes
-  file:
-    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Config/.ssh
-    dest: ~/.ssh
-    owner: aikawame
-    group: staff
-    mode: 0700
-    state: link
-    force: yes
+    "{{ gui_packages }}"
 
 - name: ホストの設定を反映する
-  become: yes
+  become:
+    yes
   file:
     src: ~/Library/Mobile Documents/com~apple~CloudDocs/Config/etc/hosts
     dest: /etc/hosts
@@ -97,11 +82,20 @@
     state: link
     force: yes
 
+- name: SSHの設定を反映する
+  file:
+    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Config/.ssh
+    dest: ~/.ssh
+    owner: aikawame
+    group: staff
+    mode: 0700
+    state: link
+    force: yes
+
 - name: IntelliJの設定をコピーする
-  become: yes
   copy:
     src: idea.vmoptions
-    dest: /Applications/IntelliJ IDEA.app/Contents/bin/idea.vmoptions
+    dest: ~/Library/Preferences/IntelliJIdea2016.3/idea.vmoptions
     owner: aikawame
     group: admin
     mode: 0644
