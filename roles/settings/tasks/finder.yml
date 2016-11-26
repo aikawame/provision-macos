@@ -6,11 +6,13 @@
     value: true
   notify: killall finder
 
+- name: 常にリストビューにする
   osx_defaults:
     domain: com.apple.finder
     key: FXPreferredViewStyle
     type: string
     value: clmv
+  notify: killall finder
 
 - name: ホームから開くようにする
   osx_defaults:
@@ -18,6 +20,7 @@
     key: NewWindowTarget
     type: string
     value: PfLo
+  notify: killall finder
 
 - name: ホームから開くようにする
   osx_defaults:
@@ -25,6 +28,7 @@
     key: NewWindowTargetPath
     type: string
     value: file://${HOME}/
+  notify: killall finder
 
 - name: パスバーの階層表示をホームから開始する
   osx_defaults:
@@ -32,6 +36,7 @@
     key: PathBarRootAtHome
     type: bool
     value: true
+  notify: killall finder
 
 - name: クイックルックのテキストをコピー可能にする
   osx_defaults:
@@ -39,6 +44,7 @@
     key: QLEnableTextSelection
     type: bool
     value: true
+  notify: killall finder
 
 - name: 他のアプリケーションに切り替えたらクイックルックを隠す
   osx_defaults:
@@ -46,6 +52,7 @@
     key: QLHidePanelOnDeactivate
     type: bool
     value: true
+  notify: killall finder
 
 - name: ファイル拡張子変更時の警告を無効にする
   osx_defaults:
@@ -53,6 +60,7 @@
     key: FXEnableExtensionChangeWarning
     type: bool
     value: false
+  notify: killall finder
 
 - name: デスクトップを無効にする
   osx_defaults:
@@ -60,6 +68,7 @@
     key: CreateDesktop
     type: bool
     value: false
+  notify: killall finder
 
 - name: アニメーションを無効にする
   osx_defaults:
@@ -67,5 +76,4 @@
     key: DisableAllAnimations
     type: bool
     value: true
-
-# TODO: Finderを再起動する
+  notify: killall finder
