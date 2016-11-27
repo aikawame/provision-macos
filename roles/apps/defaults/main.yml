@@ -108,7 +108,7 @@ gui_packages:
     type: brew_cask
     domain: com.sequelpro.SequelPro
     support: Sequel Pro
-  - name: rdm
+  - name: medis
     type: brew_cask
     domain:
     support:
