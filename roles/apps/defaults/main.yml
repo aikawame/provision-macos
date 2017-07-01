@@ -64,10 +64,6 @@ gui_packages:
     type: brew_cask
     domain:
     support:
-#  - name: genymotion
-#    type: brew_cask
-#    domain:
-#    support:
   - name: google-chrome
     type: brew_cask
     domain:
@@ -132,10 +128,14 @@ gui_packages:
     type: brew_cask
     domain:
     support:
-  - name: virtualbox
+  - name: docker
     type: brew_cask
     domain:
     support:
+#  - name: virtualbox
+#    type: brew_cask
+#    domain:
+#    support:
   - name: xtrafinder
     type: brew_cask
     domain: com.trankynam.XtraFinder
