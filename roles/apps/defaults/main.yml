@@ -36,10 +36,10 @@ gui_packages:
     type: brew_cask
     domain:
     support:
-  - name: 1password
-    type: brew_cask
-    domain: com.agilebits.onepassword4
-    support:
+#  - name: 1password
+#    type: brew_cask
+#    domain: com.agilebits.onepassword4
+#    support:
   - name: alfred
     type: brew_cask
     domain: com.runningwithcrayons.Alfred-Preferences-3
@@ -146,7 +146,7 @@ gui_packages:
     support:
 
 brew_packages:
-  - android-sdk
+#  - android-sdk
 #  - ant
 #  - cdrtools
   - git

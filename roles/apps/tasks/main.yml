@@ -103,7 +103,7 @@
 - name: IntelliJの設定をコピーする
   copy:
     src: idea.properties
-    dest: ~/Library/Preferences/IntelliJIdea2017.1/idea.vmoptions
+    dest: ~/Library/Preferences/IntelliJIdea2017.1/idea.vmproperties
     owner: aikawame
     group: admin
     mode: 0644
