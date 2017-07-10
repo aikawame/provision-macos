@@ -64,6 +64,10 @@ gui_packages:
     type: brew_cask
     domain:
     support:
+  - name: franz
+    type: brew_cask
+    domain:
+    support:
   - name: google-chrome
     type: brew_cask
     domain:
