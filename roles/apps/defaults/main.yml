@@ -124,6 +124,10 @@ gui_packages:
     type: brew_cask
     domain:
     support:
+  - name: ngrok
+    type: brew_cask
+    domain:
+    support:
   - name: yujitach-menumeters
     type: brew_cask
     domain: com.ragingmenace.MenuMeters
