@@ -36,10 +36,6 @@ gui_packages:
     type: brew_cask
     domain:
     support:
-#  - name: 1password
-#    type: brew_cask
-#    domain: com.agilebits.onepassword4
-#    support:
   - name: alfred
     type: brew_cask
     domain: com.runningwithcrayons.Alfred-Preferences-3
@@ -120,29 +116,13 @@ gui_packages:
     type: brew_cask
     domain: com.sublimetext.3
     support: Sublime Text 3
-  - name: slack
-    type: brew_cask
-    domain:
-    support:
   - name: tower
     type: brew_cask
     domain: com.fournova.Tower2
     support:
-  - name: vagrant
-    type: brew_cask
-    domain:
-    support:
   - name: docker
     type: brew_cask
     domain:
-    support:
-#  - name: virtualbox
-#    type: brew_cask
-#    domain:
-#    support:
-  - name: xtrafinder
-    type: brew_cask
-    domain: com.trankynam.XtraFinder
     support:
   - name: yujitach-menumeters
     type: brew_cask
