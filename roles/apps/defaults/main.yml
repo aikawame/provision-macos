@@ -32,6 +32,10 @@ gui_packages:
     support:
 
   # Homebrew Cask
+  - name: google-japanese-ime
+    type: brew_cask
+    domain:
+    support:
   - name: "0xed"
     type: brew_cask
     domain:
