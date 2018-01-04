@@ -10,11 +10,6 @@ gui_packages:
     id: 867299399
     domain:
     support:
-  - name: simplenote
-    type: mas
-    id: 692867256
-    domain:
-    support:
   - name: soraannai
     type: mas
     id: 599799247
@@ -32,10 +27,6 @@ gui_packages:
     support:
 
   # Homebrew Cask
-  - name: google-japanese-ime
-    type: brew_cask
-    domain:
-    support:
   - name: "0xed"
     type: brew_cask
     domain:
@@ -60,6 +51,10 @@ gui_packages:
     type: brew_cask
     domain:
     support:
+  - name: docker
+    type: brew_cask
+    domain:
+    support:
   - name: font-ricty-diminished
     type: brew_cask
     domain:
@@ -73,6 +68,10 @@ gui_packages:
     domain:
     support:
   - name: google-drive
+    type: brew_cask
+    domain:
+    support:
+  - name: google-japanese-ime
     type: brew_cask
     domain:
     support:
@@ -92,13 +91,25 @@ gui_packages:
     type: brew_cask
     domain:
     support:
-  - name: karabiner
+  - name: karabiner-elements
     type: brew_cask
-    domain: org.pqrs.Karabiner
-    support: Karabiner
+    domain:
+    support:
   - name: kindle
     type: brew_cask
     domain: com.amazon.Kindle
+    support:
+  - name: libreoffice
+    type: brew_cask
+    domain:
+    support:
+  - name: medis
+    type: brew_cask
+    domain:
+    support:
+  - name: ngrok
+    type: brew_cask
+    domain:
     support:
   - name: parallels-desktop
     type: brew_cask
@@ -108,14 +119,6 @@ gui_packages:
     type: brew_cask
     domain: com.sequelpro.SequelPro
     support: Sequel Pro
-  - name: medis
-    type: brew_cask
-    domain:
-    support:
-  - name: libreoffice
-    type: brew_cask
-    domain:
-    support:
   - name: sublime-text
     type: brew_cask
     domain: com.sublimetext.3
@@ -124,33 +127,20 @@ gui_packages:
     type: brew_cask
     domain: com.fournova.Tower2
     support:
-  - name: docker
-    type: brew_cask
-    domain:
-    support:
-  - name: ngrok
-    type: brew_cask
-    domain:
-    support:
   - name: yujitach-menumeters
     type: brew_cask
     domain: com.ragingmenace.MenuMeters
     support:
 
 brew_packages:
-#  - android-sdk
-#  - ant
-#  - cdrtools
   - git
   - gnu-sed
   - mas
   - nkf
-#  - node
   - p7zip
-  - packer
+  - pyenv
+  - rbenv
   - peco
-  - php-code-sniffer
-  - phpmd
   - wget
   - zsh
 
