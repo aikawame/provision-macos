@@ -67,7 +67,7 @@ gui_packages:
     type: brew_cask
     domain:
     support:
-  - name: google-drive
+  - name: google-backup-and-sync
     type: brew_cask
     domain:
     support:
