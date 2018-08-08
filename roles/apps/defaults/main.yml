@@ -31,6 +31,10 @@ gui_packages:
     type: brew_cask
     domain:
     support:
+  - name: adguard
+    type: brew_cask
+    domain:
+    support:
   - name: alfred
     type: brew_cask
     domain: com.runningwithcrayons.Alfred-Preferences-3
@@ -63,11 +67,11 @@ gui_packages:
     type: brew_cask
     domain:
     support:
-  - name: google-chrome
+  - name: google-backup-and-sync
     type: brew_cask
     domain:
     support:
-  - name: google-backup-and-sync
+  - name: google-chrome
     type: brew_cask
     domain:
     support:
@@ -115,6 +119,10 @@ gui_packages:
     type: brew_cask
     domain:
     support:
+  - name: paw
+    type: brew_cask
+    domain:
+    support:
   - name: sequel-pro
     type: brew_cask
     domain: com.sequelpro.SequelPro
@@ -127,20 +135,28 @@ gui_packages:
     type: brew_cask
     domain: com.fournova.Tower2
     support:
+  - name: tunnelblick
+    type: brew_cask
+    domain:
+    support:
   - name: yujitach-menumeters
     type: brew_cask
     domain: com.ragingmenace.MenuMeters
     support:
 
 brew_packages:
+  - awscli
   - git
   - gnu-sed
+  - imagemagick@6 # Railsで必要
   - mas
+  - mysql # Railsで必要
   - nkf
+  - oath-toolkit # MFAで必須
   - p7zip
-  - pyenv
-  - rbenv
   - peco
+  - pkg-config # Railsで必要
   - wget
+  - yarn
   - zsh
 
