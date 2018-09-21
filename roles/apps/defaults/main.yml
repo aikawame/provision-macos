@@ -149,6 +149,7 @@ brew_packages:
   - git
   - gnu-sed
   - imagemagick@6 # Railsで必要
+  - lastpass-cli
   - mas
   - mysql # Railsで必要
   - nkf
