@@ -5,11 +5,6 @@ gui_packages:
     id: 539883307
     domain:
     support:
-  - name: omnifocus
-    type: mas
-    id: 867299399
-    domain:
-    support:
   - name: soraannai
     type: mas
     id: 599799247
@@ -20,11 +15,6 @@ gui_packages:
     id: 435410196
     domain: com.cordlessdog.Stay
     support: Stay
-  - name: xcode
-    type: mas
-    id: 497799835
-    domain:
-    support:
 
   # Homebrew Cask
   - name: "0xed"
@@ -90,10 +80,6 @@ gui_packages:
   - name: iterm2
     type: brew_cask
     domain: com.googlecode.iterm2
-    support:
-  - name: java
-    type: brew_cask
-    domain:
     support:
   - name: karabiner-elements
     type: brew_cask
