@@ -114,18 +114,18 @@
     state: link
     force: yes
 
+# TODO: ディレクトリーを可変にする
+- name: IntelliJの設定ディレクトリーを作成する
+  file:
+    path: ~/Library/Preferences/IntelliJIdea2018.2
+    state: directory
+
 - name: IntelliJの設定をコピーする
   copy:
     src: idea.vmoptions
-    dest: ~/Library/Preferences/IntelliJIdea2017.3/idea.vmoptions
-    owner: aikawame
-    group: admin
-    mode: 0644
+    dest: ~/Library/Preferences/IntelliJIdea2018.2/idea.vmoptions
 
 - name: IntelliJの設定をコピーする
   copy:
     src: idea.properties
-    dest: ~/Library/Preferences/IntelliJIdea2017.3/idea.vmproperties
-    owner: aikawame
-    group: admin
-    mode: 0644
+    dest: ~/Library/Preferences/IntelliJIdea2018.2/idea.properties
