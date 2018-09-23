@@ -74,7 +74,7 @@
     path: ~/Library/Application Support/{{ item.item.support }}
     state: absent
   when:
-    item.item.support != None and item.stat.islnk != true
+    item.item.support != None and (item.stat.exists and item.stat.islnk == False)
   with_items:
     "{{ support_dir.results }}"
 
