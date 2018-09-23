@@ -1,4 +1,26 @@
-# TODO: 毎回インストールされないようにする
+- name: Homebrewを更新する
+  homebrew:
+    update_homebrew: yes
+  register: installed_brew
+  ignore_errors: true
+
+- name: Homebrewをインストールする
+  shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  when: installed_brew|failed
+
+- name: Homebrewの非公式リポジトリーを追加する
+  homebrew_tap:
+    tap: "{{ item }}"
+    state: present
+  with_items:
+    - argon/mas
+    - homebrew/cask-fonts
+
+- name: masをインストールする
+  homebrew:
+    name: mas
+    state: present
+
 - name: App Storeのパッケージをインストールする
   shell:
     mas install {{ item.id }}

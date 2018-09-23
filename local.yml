@@ -1,6 +1,5 @@
 - hosts: local
   roles:
-    - homebrew
     - apps
     - settings
 
