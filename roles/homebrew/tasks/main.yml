@@ -13,11 +13,5 @@
     tap: "{{ item }}"
     state: present
   with_items:
-    - homebrew/versions
-    - homebrew/binary
-    - homebrew/dupes
-    - homebrew/php
     - argon/mas
-    - caskroom/cask
-    - caskroom/homebrew-versions
-    - caskroom/homebrew-fonts
+    - homebrew/cask-fonts
