@@ -49,6 +49,10 @@ gui_packages:
     type: brew_cask
     domain:
     support:
+  - name: etcher
+    type: brew_cask
+    domain:
+    support:
   - name: font-ricty-diminished
     type: brew_cask
     domain:
