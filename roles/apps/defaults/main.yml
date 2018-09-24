@@ -101,7 +101,7 @@ gui_packages:
     type: brew_cask
     domain:
     support:
-  - name: parallels-desktop
+  - name: parallels13
     type: brew_cask
     domain:
     support:
@@ -117,7 +117,7 @@ gui_packages:
     type: brew_cask
     domain: com.sublimetext.3
     support: Sublime Text 3
-  - name: tower
+  - name: tower2
     type: brew_cask
     domain: com.fournova.Tower2
     support:
