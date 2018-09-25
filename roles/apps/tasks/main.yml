@@ -46,6 +46,11 @@
   with_items:
     "{{ brew_packages }}"
 
+- name: anyenvをインストールする
+  git:
+    repo: https://github.com/riywo/anyenv.git
+    dest: ~/.anyenv
+
 - name: GUIアプリケーションの設定を反映する
   file:
     src: ~/Library/Mobile Documents/com~apple~CloudDocs/Preferences/{{ item.domain }}.plist
