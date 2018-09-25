@@ -14,6 +14,7 @@
     state: present
   with_items:
     - argon/mas
+    - homebrew/cask-versions
     - homebrew/cask-fonts
 
 - name: masをインストールする
