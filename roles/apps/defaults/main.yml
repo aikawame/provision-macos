@@ -141,7 +141,7 @@ brew_packages:
   - imagemagick@6 # Railsで必要
   - lastpass-cli
   - mas
-  - mysql # Railsで必要
+  - mysql@5.7 # Railsで必要
   - nkf
   - oath-toolkit # MFAで必須
   - p7zip
@@ -150,4 +150,3 @@ brew_packages:
   - wget
   - yarn
   - zsh
-
