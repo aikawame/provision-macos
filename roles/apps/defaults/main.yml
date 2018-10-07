@@ -93,7 +93,7 @@ gui_packages:
     type: brew_cask
     domain: com.googlecode.iterm2
     support:
-  - name: java
+  - name: java10
     type: brew_cask
     domain:
     support:
