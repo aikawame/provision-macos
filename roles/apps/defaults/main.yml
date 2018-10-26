@@ -65,10 +65,6 @@ gui_packages:
     type: brew_cask
     domain:
     support:
-  - name: franz
-    type: brew_cask
-    domain:
-    support:
   - name: google-backup-and-sync
     type: brew_cask
     domain:
@@ -122,6 +118,10 @@ gui_packages:
     domain:
     support:
   - name: paw
+    type: brew_cask
+    domain:
+    support:
+  - name: rambox
     type: brew_cask
     domain:
     support:
