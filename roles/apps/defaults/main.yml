@@ -21,10 +21,6 @@ gui_packages:
     type: brew_cask
     domain:
     support:
-  - name: adguard
-    type: brew_cask
-    domain:
-    support:
   - name: alfred
     type: brew_cask
     domain: com.runningwithcrayons.Alfred-Preferences-3
