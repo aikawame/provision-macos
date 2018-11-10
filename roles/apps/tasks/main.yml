@@ -120,6 +120,16 @@
     state: link
     force: yes
 
+- name: AWSの設定を反映する
+  file:
+    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Config/.aws
+    dest: ~/.aws
+    owner: aikawame
+    group: staff
+    mode: 0755
+    state: link
+    force: yes
+
 # TODO: ディレクトリーを可変にする
 - name: IntelliJの設定ディレクトリーを作成する
   file:
