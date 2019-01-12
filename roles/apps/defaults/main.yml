@@ -41,6 +41,10 @@ gui_packages:
     type: brew_cask
     domain:
     support:
+  - name: atok
+    type: brew_cask
+    domain:
+    support:
   - name: bettertouchtool
     type: brew_cask
     domain: com.hegenberg.BetterTouchTool
@@ -70,10 +74,6 @@ gui_packages:
     domain:
     support:
   - name: google-chrome
-    type: brew_cask
-    domain:
-    support:
-  - name: google-japanese-ime
     type: brew_cask
     domain:
     support:
