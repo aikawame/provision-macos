@@ -129,6 +129,10 @@ gui_packages:
     type: brew_cask
     domain: com.sequelpro.SequelPro
     support: Sequel Pro
+  - name: slack
+    type: brew_cask
+    domain:
+    support:
   - name: tower2
     type: brew_cask
     domain: com.fournova.Tower2
