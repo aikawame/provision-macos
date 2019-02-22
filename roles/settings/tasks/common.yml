@@ -133,6 +133,13 @@
     type: int
     value: 1
 
+- name: キー長押し保留を無効にする
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: ApplePressAndHoldEnabled
+    type: bool
+    value: false
+
 - name: ローカライズファイルを削除する
   become: yes
   file:
