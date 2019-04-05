@@ -133,15 +133,15 @@
 # TODO: ディレクトリーを可変にする
 - name: IntelliJの設定ディレクトリーを作成する
   file:
-    path: ~/Library/Preferences/IntelliJIdea2018.2
+    path: ~/Library/Preferences/IntelliJIdea2019.1
     state: directory
 
 - name: IntelliJの設定をコピーする
   copy:
     src: idea.vmoptions
-    dest: ~/Library/Preferences/IntelliJIdea2018.2/idea.vmoptions
+    dest: ~/Library/Preferences/IntelliJIdea2019.1/idea.vmoptions
 
 - name: IntelliJの設定をコピーする
   copy:
     src: idea.properties
-    dest: ~/Library/Preferences/IntelliJIdea2018.2/idea.properties
+    dest: ~/Library/Preferences/IntelliJIdea2019.1/idea.properties
