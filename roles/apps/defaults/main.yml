@@ -101,7 +101,7 @@ gui_packages:
     type: brew_cask
     domain: com.amazon.Kindle
     support:
-  - name: libreoffice
+  - name: libreoffice-language-pack
     type: brew_cask
     domain:
     support:
