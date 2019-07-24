@@ -27,8 +27,8 @@ gui_packages:
     support:
   - name: alfred
     type: brew_cask
-    domain: com.runningwithcrayons.Alfred-Preferences-3
-    support: Alfred 3
+    domain: com.runningwithcrayons.Alfred-Preferences
+    support: Alfred
   - name: android-platform-tools
     type: brew_cask
     domain:
