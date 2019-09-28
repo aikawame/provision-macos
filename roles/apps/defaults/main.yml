@@ -37,10 +37,6 @@ gui_packages:
     type: brew_cask
     domain:
     support:
-  - name: bettertouchtool
-    type: brew_cask
-    domain: com.hegenberg.BetterTouchTool
-    support: BetterTouchTool
   - name: diffmerge
     type: brew_cask
     domain: com.sourcegear.DiffMerge
@@ -94,6 +90,10 @@ gui_packages:
     domain:
     support:
   - name: medis
+    type: brew_cask
+    domain:
+    support:
+  - name: middleclick
     type: brew_cask
     domain:
     support:
