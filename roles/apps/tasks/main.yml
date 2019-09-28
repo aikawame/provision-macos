@@ -16,6 +16,7 @@
     - argon/mas
     - homebrew/cask-versions
     - homebrew/cask-fonts
+    - beeftornado/rmtree
 
 - name: masをインストールする
   homebrew:
