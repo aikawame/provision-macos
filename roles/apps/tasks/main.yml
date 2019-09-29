@@ -25,20 +25,16 @@
 
 - name: App Storeのパッケージをインストールする
   shell:
-    mas install {{ item.id }}
-  when:
-    item.type == 'mas'
+    mas install {{ item }}
   with_items:
-    "{{ gui_packages }}"
+    "{{ mas_packages }}"
 
 - name: Homebrew Caskのパッケージをインストールする
   homebrew_cask:
-    name: "{{ item.name }}"
+    name: "{{ item }}"
     state: present
-  when:
-    item.type == 'brew_cask'
   with_items:
-    "{{ gui_packages }}"
+    "{{ brew_cask_packages }}"
 
 - name: Homebrewのパッケージをインストールする
   homebrew:
@@ -51,98 +47,3 @@
   git:
     repo: https://github.com/riywo/anyenv.git
     dest: ~/.anyenv
-
-- name: GUIアプリケーションの設定を反映する
-  file:
-    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Preferences/{{ item.domain }}.plist
-    dest: ~/Library/Preferences/{{ item.domain }}.plist
-    owner: aikawame
-    group: staff
-    mode: 0600
-    state: link
-    force: yes
-  when:
-    item.domain != None
-  with_items:
-    "{{ gui_packages }}"
-
-- name: アプリケーションの支援ディレクトリーを確認する
-  stat:
-    path: ~/Library/Application Support/{{ item.support }}
-  when:
-    item.support != None
-  with_items:
-    "{{ gui_packages }}"
-  register:
-    support_dir
-
-- name: アプリケーションの支援ディレクトリーを削除する
-  file:
-    path: ~/Library/Application Support/{{ item.item.support }}
-    state: absent
-  when:
-    item.item.support != None and (item.stat.exists and item.stat.islnk == False)
-  with_items:
-    "{{ support_dir.results }}"
-
-- name: アプリケーションの支援ディレクトリーを反映する
-  file:
-    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Application Support/{{ item.support }}
-    dest: ~/Library/Application Support/{{ item.support }}
-    owner: aikawame
-    group: staff
-    mode: 0755
-    state: link
-    force: yes
-  when:
-    item.support != None
-  with_items:
-    "{{ gui_packages }}"
-
-- name: ホストの設定を反映する
-  become:
-    yes
-  file:
-    src: /Users/aikawame/Library/Mobile Documents/com~apple~CloudDocs/Config/etc/hosts
-    dest: /etc/hosts
-    owner: root
-    group: wheel
-    mode: 0644
-    state: link
-    force: yes
-
-- name: SSHの設定を反映する
-  file:
-    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Config/.ssh
-    dest: ~/.ssh
-    owner: aikawame
-    group: staff
-    mode: 0700
-    state: link
-    force: yes
-
-- name: AWSの設定を反映する
-  file:
-    src: ~/Library/Mobile Documents/com~apple~CloudDocs/Config/.aws
-    dest: ~/.aws
-    owner: aikawame
-    group: staff
-    mode: 0755
-    state: link
-    force: yes
-
-# TODO: ディレクトリーを可変にする
-- name: IntelliJの設定ディレクトリーを作成する
-  file:
-    path: ~/Library/Preferences/IntelliJIdea2019.1
-    state: directory
-
-- name: IntelliJの設定をコピーする
-  copy:
-    src: idea.vmoptions
-    dest: ~/Library/Preferences/IntelliJIdea2019.1/idea.vmoptions
-
-- name: IntelliJの設定をコピーする
-  copy:
-    src: idea.properties
-    dest: ~/Library/Preferences/IntelliJIdea2019.1/idea.properties

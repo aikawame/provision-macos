@@ -1,134 +1,36 @@
-gui_packages:
-  # App Store
-  - name: line
-    type: mas
-    id: 539883307
-    domain:
-    support:
-  - name: soraannai
-    type: mas
-    id: 599799247
-    domain:
-    support:
-  - name: stay
-    type: mas
-    id: 435410196
-    domain: com.cordlessdog.Stay
-    support: Stay
+mas_packages:
+  - 539883307 # line
+  - 599799247 # soraannai
+  - 435410196 # stay
 
-  # Homebrew Cask
-  - name: "0xed"
-    type: brew_cask
-    domain:
-    support:
-  - name: adguard
-    type: brew_cask
-    domain:
-    support:
-  - name: alfred
-    type: brew_cask
-    domain: com.runningwithcrayons.Alfred-Preferences
-    support: Alfred
-  - name: appcleaner
-    type: brew_cask
-    domain:
-    support:
-  - name: atok
-    type: brew_cask
-    domain:
-    support:
-  - name: diffmerge
-    type: brew_cask
-    domain: com.sourcegear.DiffMerge
-    support:
-  - name: disk-inventory-x
-    type: brew_cask
-    domain:
-    support:
-  - name: docker
-    type: brew_cask
-    domain:
-    support:
-  - name: etcher
-    type: brew_cask
-    domain:
-    support:
-  - name: font-ricty-diminished
-    type: brew_cask
-    domain:
-    support:
-  - name: google-chrome
-    type: brew_cask
-    domain:
-    support:
-  - name: hyperswitch
-    type: brew_cask
-    domain: com.bahoom.HyperSwitch
-    support:
-  - name: intellij-idea
-    type: brew_cask
-    domain:
-    support:
-  - name: iterm2
-    type: brew_cask
-    domain: com.googlecode.iterm2
-    support:
-  - name: adoptopenjdk8 # Flutterで必須
-    type: brew_cask
-    domain:
-    support:
-  - name: karabiner-elements
-    type: brew_cask
-    domain:
-    support:
-  - name: kindle
-    type: brew_cask
-    domain: com.amazon.Kindle
-    support:
-  - name: libreoffice-language-pack
-    type: brew_cask
-    domain:
-    support:
-  - name: medis
-    type: brew_cask
-    domain:
-    support:
-  - name: middleclick
-    type: brew_cask
-    domain:
-    support:
-  - name: ngrok
-    type: brew_cask
-    domain:
-    support:
-  - name: parallels13
-    type: brew_cask
-    domain:
-    support:
-  - name: paw
-    type: brew_cask
-    domain:
-    support:
-  - name: sequel-pro
-    type: brew_cask
-    domain: com.sequelpro.SequelPro
-    support: Sequel Pro
-  - name: slack
-    type: brew_cask
-    domain:
-    support:
-  - name: tower2
-    type: brew_cask
-    domain: com.fournova.Tower2
-    support:
-  - name: tunnelblick
-    type: brew_cask
-    domain:
-    support:
-  - name: yujitach-menumeters
-    type: brew_cask
-    domain: com.ragingmenace.MenuMeters
-    support:
+brew_cask_packages:
+  - "0xed"
+  - adguard
+  - alfred
+  - appcleaner
+  - atok
+  - diffmerge
+  - disk-inventory-x
+  - docker
+  - etcher
+  - font-ricty-diminished
+  - google-chrome
+  - hyperswitch
+  - intellij-idea
+  - iterm2
+  - adoptopenjdk8 # Flutterで必須
+  - karabiner-elements
+  - kindle
+  - libreoffice-language-pack
+  - medis
+  - middleclick
+  - ngrok
+  - parallels13
+  - paw
+  - sequel-pro
+  - slack
+  - tower2
+  - tunnelblick
 
 brew_packages:
   - awscli
