@@ -6,13 +6,13 @@ mas_packages:
 brew_cask_packages:
   - "0xed"
   - adguard
+  - bettertouchtool
   - alfred
   - appcleaner
   - atok
   - diffmerge
   - disk-inventory-x
   - docker
-  - etcher
   - font-ricty-diminished
   - google-chrome
   - hyperswitch
@@ -22,8 +22,6 @@ brew_cask_packages:
   - karabiner-elements
   - kindle
   - libreoffice-language-pack
-  - medis
-  - middleclick
   - ngrok
   - parallels13
   - paw
