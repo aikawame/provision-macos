@@ -27,6 +27,7 @@ brew_cask_packages:
   - paw
   - sequel-pro
   - slack
+  - ssh-tunnel-manager
   - tower2
   - tunnelblick
 
