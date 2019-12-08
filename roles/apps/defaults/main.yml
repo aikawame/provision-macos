@@ -1,4 +1,6 @@
 mas_packages:
+  - 824183456 # affinity photo
+  - 824171161 # affinity designer
   - 539883307 # line
   - 599799247 # soraannai
   - 435410196 # stay
@@ -22,8 +24,6 @@ brew_cask_packages:
   - karabiner-elements
   - kindle
   - libreoffice-language-pack
-  - ngrok
-  - parallels13
   - paw
   - sequel-pro
   - slack
