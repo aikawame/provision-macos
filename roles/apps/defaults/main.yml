@@ -23,7 +23,6 @@ brew_cask_packages:
   - adoptopenjdk8 # Flutterで必須
   - karabiner-elements
   - kindle
-  - libreoffice-language-pack
   - paw
   - sequel-pro
   - slack
