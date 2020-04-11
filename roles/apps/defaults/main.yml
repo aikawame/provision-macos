@@ -6,7 +6,6 @@ mas_packages:
   - 435410196 # stay
 
 brew_cask_packages:
-  - "0xed"
   - adguard
   - bettertouchtool
   - alfred
@@ -15,10 +14,9 @@ brew_cask_packages:
   - diffmerge
   - disk-inventory-x
   - docker
-  - font-ricty-diminished
+  - font-hackgen
   - google-chrome
   - hyperswitch
-  - intellij-idea
   - iterm2
   - adoptopenjdk8 # Flutterで必須
   - karabiner-elements
@@ -29,6 +27,7 @@ brew_cask_packages:
   - ssh-tunnel-manager
   - tower2
   - tunnelblick
+  - visual-studio-code
 
 brew_packages:
   - awscli
