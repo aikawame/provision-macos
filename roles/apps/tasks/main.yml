@@ -5,7 +5,7 @@
   ignore_errors: true
 
 - name: Homebrewをインストールする
-  shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   when: installed_brew|failed
 
 - name: Homebrewの非公式リポジトリーを追加する
