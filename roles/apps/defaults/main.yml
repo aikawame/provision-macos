@@ -1,50 +1,26 @@
-mas_packages:
-  - 824183456 # affinity photo
-  - 824171161 # affinity designer
-  - 539883307 # line
-  - 599799247 # soraannai
-  - 435410196 # stay
-
 brew_cask_packages:
-  - adguard
-  - bettertouchtool
   - alfred
+  - alt-tab
   - appcleaner
   - atok
-  - diffmerge
-  - disk-inventory-x
   - docker
-  - font-hackgen
-  - google-chrome
-  - hyperswitch
-  - iterm2
-  - adoptopenjdk8 # Flutterで必須
+  - font-ricty-diminished
+  - grandperspective
+  - jetbrains-toolbox
   - karabiner-elements
   - kindle
-  - paw
+  - microsoft-edge
+  - middleclick
+  - postman
   - sequel-pro
   - slack
-  - ssh-tunnel-manager
-  - tower2
-  - tunnelblick
-  - visual-studio-code
+  - warp
 
 brew_packages:
   - awscli
-  - brew-rmtree
-  - ffmpeg # Converterで必須
-  - gifsicle # Converterで必須
   - git
   - gnu-sed
-  - imagemagick@6 # Railsで必要
-  - lastpass-cli
-  - mas
-  - mysql@5.7 # Railsで必要
   - nkf
-  - oath-toolkit # MFAで必須
   - p7zip
-  - peco
-  - pkg-config # Railsで必要
   - wget
-  - yarn
   - zsh

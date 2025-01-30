@@ -5,29 +5,8 @@
   ignore_errors: true
 
 - name: Homebrewをインストールする
-  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   when: installed_brew|failed
-
-- name: Homebrewの非公式リポジトリーを追加する
-  homebrew_tap:
-    tap: "{{ item }}"
-    state: present
-  with_items:
-    - argon/mas
-    - homebrew/cask-versions
-    - homebrew/cask-fonts
-    - beeftornado/rmtree
-
-- name: masをインストールする
-  homebrew:
-    name: mas
-    state: present
-
-- name: App Storeのパッケージをインストールする
-  shell:
-    mas install {{ item }}
-  with_items:
-    "{{ mas_packages }}"
 
 - name: Homebrew Caskのパッケージをインストールする
   homebrew_cask:
@@ -42,8 +21,3 @@
     state: present
   with_items:
     "{{ brew_packages }}"
-
-- name: anyenvをインストールする
-  git:
-    repo: https://github.com/riywo/anyenv.git
-    dest: ~/.anyenv
