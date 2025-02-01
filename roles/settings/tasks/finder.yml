@@ -38,22 +38,6 @@
     value: true
   notify: killall finder
 
-- name: クイックルックのテキストをコピー可能にする
-  osx_defaults:
-    domain: com.apple.finder
-    key: QLEnableTextSelection
-    type: bool
-    value: true
-  notify: killall finder
-
-- name: 他のアプリケーションに切り替えたらクイックルックを隠す
-  osx_defaults:
-    domain: com.apple.finder
-    key: QLHidePanelOnDeactivate
-    type: bool
-    value: true
-  notify: killall finder
-
 - name: ファイル拡張子変更時の警告を無効にする
   osx_defaults:
     domain: com.apple.finder

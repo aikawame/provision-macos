@@ -32,14 +32,6 @@
     type: int
     value: 15
 
-- name: アンチエイリアスを最適化する
-  osx_defaults:
-    host: currentHost
-    domain: NSGlobalDomain
-    key: AppleFontSmoothing
-    type: int
-    value: 2
-
 - name: 新規ウィンドウを開く時のアニメーションを無効にする
   osx_defaults:
     domain: NSGlobalDomain
@@ -167,7 +159,3 @@
 
 - name: ライブラリーを表示する
   shell: chflags nohidden ~/Library
-
-- name: 起動音を無効にする
-  become: yes
-  shell: nvram SystemAudioVolume=%80
