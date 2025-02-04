@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ansible-playbook -i local local.yml
+/opt/homebrew/bin/ansible-playbook -i local local.yml
