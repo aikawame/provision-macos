@@ -107,8 +107,8 @@
   osx_defaults:
     domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
     key: Clicking
-    type: bool
-    value: true
+    type: int
+    value: 1
 
 - name: タップでクリックを有効にする
   osx_defaults:
