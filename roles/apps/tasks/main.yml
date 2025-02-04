@@ -1,22 +1,16 @@
 - name: Homebrewを更新する
   homebrew:
     update_homebrew: yes
-  register: installed_brew
-  ignore_errors: true
-
-- name: Homebrewをインストールする
-  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  when: installed_brew|failed
 
 - name: Homebrew Caskのパッケージをインストールする
-  homebrew_cask:
+  community.general.homebrew_cask:
     name: "{{ item }}"
     state: present
   with_items:
     "{{ brew_cask_packages }}"
 
 - name: Homebrewのパッケージをインストールする
-  homebrew:
+  community.general.homebrew:
     name: "{{ item }}"
     state: present
   with_items:
