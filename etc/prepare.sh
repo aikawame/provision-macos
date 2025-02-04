@@ -11,11 +11,17 @@ else
     sudo sh -c "echo '%staff ALL=(ALL) NOPASSWD: ALL' > /private/etc/sudoers.d/staff"
 fi
 
-which pip > /dev/null 2>&1
+which /opt/homebrew/bin/brew > /dev/null 2>&1
 if [ $? -ne 0 ]; then
-    sudo easy_install pip
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+which brew > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    echo ~/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 which ansible > /dev/null 2>&1
 if [ $? -ne 0 ]; then
-    sudo pip install ansible
+    brew install ansible
 fi
