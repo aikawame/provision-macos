@@ -1,7 +1,0 @@
-- name: 自動的に隠す
-  osx_defaults:
-    domain: com.apple.dock
-    key: autohide
-    type: bool
-    value: true
-  notify: killall dock

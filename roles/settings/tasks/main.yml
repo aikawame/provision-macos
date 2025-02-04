@@ -1,3 +1,233 @@
-- include: system.yml
-- include: finder.yml
-- include: dock.yml
+- name: 保存ダイアログを詳細表示で開く
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: "{{ item }}"
+    type: bool
+    value: true
+  with_items:
+    - NSNavPanelExpandedStateForSaveMode
+    - NSNavPanelExpandedStateForSaveMode2
+
+- name: 印刷ダイアログを詳細表示で開く
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: "{{ item }}"
+    type: bool
+    value: true
+  with_items:
+    - PMPrintingExpandedStateForPrint
+    - PMPrintingExpandedStateForPrint2
+
+- name: キーリピート速度を変更する
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: KeyRepeat
+    type: int
+    value: 2
+
+- name: キーリピート開始速度を変更する
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: InitialKeyRepeat
+    type: int
+    value: 15
+
+- name: 新規ウィンドウを開く時のアニメーションを無効にする
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticWindowAnimationsEnabled
+    type: bool
+    value: false
+
+- name: オートコレクトを無効にする
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+
+- name: スペルチェック時の文法チェックを無効にする
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: CheckGrammarWithSpelling
+    type: bool
+    value: false
+
+- name: ネットワークボリュームで.DS_Storeを作成しないようにする
+  osx_defaults:
+    domain: com.apple.desktopservices
+    key: DSDontWriteNetworkStores
+    type: bool
+    value: true
+
+- name: クラッシュレポートを無効にする
+  osx_defaults:
+    domain: com.apple.CrashReporter
+    key: DialogType
+    type: string
+    value: none
+
+- name: Dashboardを無効にする
+  osx_defaults:
+    domain: com.apple.dashboard
+    key: mcx-disabled
+    type: bool
+    value: true
+
+- name: スクリーンショットのウィンドウの影を無効にする
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: disable-shadow
+    type: bool
+    value: true
+
+- name: スクリーンショットの保存先を変更する
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    type: string
+    value: ~/Downloads
+
+- name: スクリーンショットの影を無効にする
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: disable-shadow
+    type: bool
+    value: true
+
+- name: 写真の自動起動を無効にする
+  osx_defaults:
+    host: currentHost
+    domain: com.apple.ImageCapture
+    key: disableHotPlug
+    type: bool
+    value: true
+
+- name: タップでクリックを有効にする
+  osx_defaults:
+    domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+    key: Clicking
+    type: bool
+    value: true
+
+- name: タップでクリックを有効にする
+  osx_defaults:
+    host: currentHost
+    domain: NSGlobalDomain
+    key: com.apple.mouse.tapBehavior
+    type: int
+    value: 1
+
+- name: タップでクリックを有効にする
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.mouse.tapBehavior
+    type: int
+    value: 1
+
+- name: キー長押し保留を無効にする
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: ApplePressAndHoldEnabled
+    type: bool
+    value: false
+
+- name: ローカライズファイルを削除する
+  become: yes
+  file:
+    path: "/{{ item }}/.localized"
+    state: absent
+  with_items:
+    - Applications
+    - Library
+    - Users
+
+- name: ホーム以下のローカライズファイルを削除する
+  file:
+    path: "~/{{ item }}/.localized"
+    state: absent
+  with_items:
+    - Applications
+    - Desktop
+    - Documents
+    - Downloads
+    - Library
+    - Movies
+    - Music
+    - Pictures
+    - Public
+
+- name: ライブラリーを表示する
+  shell: chflags nohidden ~/Library
+
+- name: 隠しファイルを表示する
+  osx_defaults:
+    domain: com.apple.finder
+    key: AppleShowAllFiles
+    type: bool
+    value: true
+  notify: killall finder
+
+- name: Finderを常にリストビューにする
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: clmv
+  notify: killall finder
+
+- name: Finderをホームから開くようにする
+  osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTarget
+    type: string
+    value: PfLo
+  notify: killall finder
+
+- name: Finderをホームから開くようにする
+  osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTargetPath
+    type: string
+    value: file://${HOME}/
+  notify: killall finder
+
+- name: パスバーの階層表示をホームから開始する
+  osx_defaults:
+    domain: com.apple.finder
+    key: PathBarRootAtHome
+    type: bool
+    value: true
+  notify: killall finder
+
+- name: ファイル拡張子変更時の警告を無効にする
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXEnableExtensionChangeWarning
+    type: bool
+    value: false
+  notify: killall finder
+
+- name: デスクトップを無効にする
+  osx_defaults:
+    domain: com.apple.finder
+    key: CreateDesktop
+    type: bool
+    value: false
+  notify: killall finder
+
+- name: アニメーションを無効にする
+  osx_defaults:
+    domain: com.apple.finder
+    key: DisableAllAnimations
+    type: bool
+    value: true
+  notify: killall finder
+
+- name: Dockを自動的に隠す
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+  notify: killall dock
