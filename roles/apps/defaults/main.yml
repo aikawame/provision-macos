@@ -8,12 +8,11 @@ brew_cask_packages:
   - grandperspective
   - jetbrains-toolbox
   - karabiner-elements
-  - kindle
   - microsoft-edge
   - middleclick
   - postman
-  - sequel-pro
   - slack
+  - tableplus
   - warp
 
 brew_packages:
