@@ -18,20 +18,6 @@
     - PMPrintingExpandedStateForPrint
     - PMPrintingExpandedStateForPrint2
 
-- name: キーリピート速度を変更する
-  osx_defaults:
-    domain: NSGlobalDomain
-    key: KeyRepeat
-    type: float
-    value: 2
-
-- name: キーリピート開始速度を変更する
-  osx_defaults:
-    domain: NSGlobalDomain
-    key: InitialKeyRepeat
-    type: float
-    value: 15
-
 - name: 新規ウィンドウを開く時のアニメーションを無効にする
   osx_defaults:
     domain: NSGlobalDomain
@@ -67,13 +53,6 @@
     type: string
     value: none
 
-- name: Dashboardを無効にする
-  osx_defaults:
-    domain: com.apple.dashboard
-    key: mcx-disabled
-    type: bool
-    value: true
-
 - name: スクリーンショットのウィンドウの影を無効にする
   osx_defaults:
     domain: com.apple.screencapture
@@ -95,67 +74,12 @@
     type: bool
     value: true
 
-- name: 写真の自動起動を無効にする
-  osx_defaults:
-    host: currentHost
-    domain: com.apple.ImageCapture
-    key: disableHotPlug
-    type: bool
-    value: true
-
-- name: タップでクリックを有効にする
-  osx_defaults:
-    domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
-    key: Clicking
-    type: int
-    value: 1
-
-- name: タップでクリックを有効にする
-  osx_defaults:
-    host: currentHost
-    domain: NSGlobalDomain
-    key: com.apple.mouse.tapBehavior
-    type: int
-    value: 1
-
-- name: タップでクリックを有効にする
-  osx_defaults:
-    domain: NSGlobalDomain
-    key: com.apple.mouse.tapBehavior
-    type: int
-    value: 1
-
 - name: キー長押し保留を無効にする
   osx_defaults:
     domain: NSGlobalDomain
     key: ApplePressAndHoldEnabled
     type: bool
     value: false
-
-- name: ローカライズファイルを削除する
-  become: yes
-  file:
-    path: "/{{ item }}/.localized"
-    state: absent
-  with_items:
-    - Applications
-    - Library
-    - Users
-
-- name: ホーム以下のローカライズファイルを削除する
-  file:
-    path: "~/{{ item }}/.localized"
-    state: absent
-  with_items:
-    - Applications
-    - Desktop
-    - Documents
-    - Downloads
-    - Library
-    - Movies
-    - Music
-    - Pictures
-    - Public
 
 - name: ライブラリーを表示する
   shell: chflags nohidden ~/Library
@@ -166,30 +90,6 @@
     key: AppleShowAllFiles
     type: string
     value: true
-  notify: killall finder
-
-- name: Finderを常にリストビューにする
-  osx_defaults:
-    domain: com.apple.finder
-    key: FXPreferredViewStyle
-    type: string
-    value: clmv
-  notify: killall finder
-
-- name: Finderをホームから開くようにする
-  osx_defaults:
-    domain: com.apple.finder
-    key: NewWindowTarget
-    type: string
-    value: PfLo
-  notify: killall finder
-
-- name: Finderをホームから開くようにする
-  osx_defaults:
-    domain: com.apple.finder
-    key: NewWindowTargetPath
-    type: string
-    value: file://${HOME}/
   notify: killall finder
 
 - name: パスバーの階層表示をホームから開始する
