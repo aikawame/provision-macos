@@ -1,3 +1,57 @@
+- name: ソースコードのディレクトリーを生成する
+  ansible.builtin.file:
+    path: ~/src
+    state: directory
+
+- name: dotfilesのインストール状態を確認する
+  ansible.builtin.stat:
+    path: ~/src/dotfiles-macos
+  register: dotfiles_installed
+
+- name: dotfilesをダウンロードする
+  ansible.builtin.git:
+    repo: https://github.com/aikawame/dotfiles-macos.git
+    dest: ~/src/dotfiles
+  when: dotfiles_installed.stat.exists == false
+
+- name: dotfilesをインストールする
+  ansible.builtin.shell: ./install
+  args:
+    chdir: ~/src/dotfiles-macos
+  when: dotfiles_installed.stat.exists == false
+
+- name: AWSの設定をコピーする
+  ansible.builtin.copy:
+    src: roles/settings/files/aws_config
+    dest: ~/.aws/config
+
+- name: AWSの認証情報をコピーする
+  ansible.builtin.template:
+    src: roles/settings/templates/aws_credentials.j2
+    dest: ~/.aws/credentials
+
+- name: SSHの設定をコピーする
+  ansible.builtin.template:
+    src: roles/settings/templates/ssh_config.j2
+    dest: ~/.ssh/config
+
+- name: RSA秘密鍵をコピーする
+  ansible.builtin.template:
+    src: roles/settings/templates/id_rsa.j2
+    dest: ~/.ssh/id_rsa
+    mode: 0600
+
+- name: RSA公開鍵をコピーする
+  ansible.builtin.template:
+    src: roles/settings/templates/id_rsa.pub.j2
+    dest: ~/.ssh/id_rsa.pub
+    mode: 0600
+
+- name: SSHディレクトリーの権限を変更する
+  ansible.builtin.file:
+    path: ~/src/dotfiles/.ssh
+    mode: 0700
+
 - name: 保存ダイアログを詳細表示で開く
   osx_defaults:
     domain: NSGlobalDomain
