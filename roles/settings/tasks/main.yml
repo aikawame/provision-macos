@@ -11,7 +11,7 @@
 - name: dotfilesをダウンロードする
   ansible.builtin.git:
     repo: https://github.com/aikawame/dotfiles-macos.git
-    dest: ~/src/dotfiles
+    dest: ~/src/dotfiles-macos
   when: dotfiles_installed.stat.exists == false
 
 - name: dotfilesをインストールする
