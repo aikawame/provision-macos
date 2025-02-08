@@ -49,7 +49,7 @@
 
 - name: SSHディレクトリーの権限を変更する
   ansible.builtin.file:
-    path: ~/src/dotfiles/.ssh
+    path: ~/src/dotfiles-macos/.ssh
     mode: 0700
 
 - name: 保存ダイアログを詳細表示で開く
