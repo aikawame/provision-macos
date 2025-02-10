@@ -1,9 +1,0 @@
-# custom IntelliJ IDEA VM options
-
--Xms2048m
--Xmx8192m
--XX:MaxPermSize=1024m
--XX:ReservedCodeCacheSize=512m
--XX:+UseCompressedOops
-
--Dsun.java2d.uiScale.enabled=false
